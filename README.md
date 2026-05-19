@@ -1,0 +1,23 @@
+# Software Engineering Lab
+
+A curated software engineering lab exploring advanced programming paradigms and full-stack systems design. This repository serves as a centralized index for my architectural proofs-of-concept, system design implementations, and independent research.
+
+---
+
+## Software Engineering & Design Patterns Index
+
+| Concept / Paradigm                   | Concrete Implementation                                                                                                                                                                                                                                           | Primary Stack                              | Repository Link                                                           |
+| :----------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------- | :------------------------------------------------------------------------ |
+| **Dependency Inversion & DDD**       | RESTful engine implementing evrone-inspired Clean Architecture with strict layer decoupling. Implements a swappable data layer (In-Memory Maps vs. Production PostgreSQL) injected at runtime via interface contracts to keep business use-cases purely isolated. | Go, PostgreSQL, Gin, Docker                | [Codebase ➔](https://github.com/nabilfikrisp/go-crud)                     |
+| **Static Site Generation (SSG)**     | Fully static content engine and portfolio architecture. Features build-time file-system Markdown parsing via frontmatter to dynamically compile static blog feeds, deployed to Cloudflare Pages for zero-cost infrastructure overhead.                            | Next.js, React, TypeScript, Markdown       | [Codebase ➔](https://github.com/nabilfikrisp/portfolio)                   |
+| **Batch Processing & Stream I/O**    | 1M row CSV insertion benchmark comparing application-layer concurrency (Goroutine worker pool) against raw database streaming (PostgreSQL `COPY` protocol).                                                                                                       | Go, PostgreSQL, Goroutines                 | [Codebase ➔](https://github.com/nabilfikrisp/go-csv-worker-pool)          |
+| **State Management & Pub/Sub**       | Custom Zustand-like store built using React 18's native `useSyncExternalStore` hook, featuring atomic selectors to prevent unnecessary component re-renders.                                                                                                      | React, TypeScript                          | [Codebase ➔](https://github.com/nabilfikrisp/mini-react-state-management) |
+| **Network Security & Reverse Proxy** | Monorepo implementation of a double-encrypted API proxy layer using AES-256 payload obfuscation and HMAC-SHA256 signatures to eliminate client-side token exposure and payload tampering on unencrypted network segments.                                         | Next.js, Hono, TypeScript, pnpm            | [Codebase ➔](https://github.com/nabilfikrisp/encrypted-api-proxy)         |
+| **Asynchronous Concurrency**         | Non-blocking Excel processing pipeline using an in-memory job queue and decoupled `worker_threads` to offload intensive file parsing. Implements 500-row database batch transactions to optimize database I/O performance.                                        | Node.js, Worker Thread, PostgreSQL, Prisma | [Codebase ➔](https://github.com/nabilfikrisp/node-worker-thread)          |
+| **Graph Deep Learning**              | Vision Graph Neural Network (ViGNN) pipeline that structures image data as graph nodes for model training. Serializes the trained PyTorch weights to disk and loads them into a standard Flask endpoint for straightforward web inference.                        | Python, PyTorch, Flask                     | [Repo ➔](https://github.com/nabilfikrisp/yoga-gnn-app)                    |
+
+---
+
+## Lab Structure
+
+Every concept indexed here is fully isolated inside its own dedicated repository. Each codebase contains its own localized documentation, environment configurations, and setup scripts. Use the links in the table above to jump straight to a specific implementation.
